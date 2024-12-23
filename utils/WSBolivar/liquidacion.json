@@ -1,0 +1,472 @@
+{
+    "dataHeader": {
+        "codRespuesta": 0,
+        "errores": []
+    },
+    "data": [
+        {
+            "requestData": {
+                "tomador": {
+                    "tipoDocumento": "CC",
+                    "numeroDocumento": 1107069274
+                },
+                "periodoFacturacion": 12,
+                "claveAsesor": "73999",
+                "autos": [
+                    {
+                        "codRiesgo": 1,
+                        "placa": "FWM874",
+                        "marca": "08801046",
+                        "modelo": 2018,
+                        "asegurado": {
+                            "nombres": "RAFAEL",
+                            "tipoDocumento": "CC",
+                            "telefono": "3300000",
+                            "direccion": "AV DORADO N 68C 61 P 10 TORRE CENTRAL",
+                            "email": "5rafaelgarciaocampo@gmail.com",
+                            "numeroDocumento": 1107069274,
+                            "apellidos": "GARCIA",
+                            "celular": "3108987234",
+                            "ciudad": "14000"
+                        },
+                        "conductor": {
+                            "nombres": "Rafael Eduardo ",
+                            "sexo": "M",
+                            "fechaNacimiento": "26121991",
+                            "ocupacion": 1,
+                            "menor25": true,
+                            "estadoCivil": "C"
+                        },
+                        "sumaAsegurada": 29100000,
+                        "sumaAccesorios": 0,
+                        "opcionCobertura": 0,
+                        "localidadMovilizacion": "14000",
+                        "responsabilidadCivil": 20,
+                        "deducibleCobertura": 0,
+                        "vehiculoRemplazo": true,
+                        "deducibleParcial": 139,
+                        "deducibleTotal": 3,
+                        "deducibleHurto": 3,
+                        "uso": "31",
+                        "bonusOMalus": "-59",
+                        "vinculacionGrupo": true,
+                        "beneficiario": {
+                            "tipoDocumento": "CC",
+                            "numeroDocumento": "1107069274",
+                            "oneroso": false,
+                            "razonSocial": "RAFAEL EDUARDO GARCIA OCAMPO"
+                        },
+                        "color": "240",
+                        "motor": "F8DN5859868",
+                        "chasis": "MA3FB32S8J0B02944",
+                        "ceroKm": "N",
+                        "blindado": false,
+                        "fechaCexper": "2023-04-30T00:00:00",
+                        "descuentoTecnico": -59,
+                        "descuentoComercial": 0,
+                        "reqInspeccion": "S",
+                        "emailEnvio": "tecnologia@grupoasistencia.com",
+                        "contiCambioCompania": false,
+                        "contiCambioAsegurado": false,
+                        "accesorios": [],
+                        "tipoServicioRunt": 1,
+                        "fechaFinVigFasecolda": "2023-11-21T00:00:00",
+                        "calculaBonifiReprLegal": false,
+                        "tipoVehiculo": "1",
+                        "opcionAutos": 1,
+                        "opcionPa": "S",
+                        "opcionAsis": 1,
+                        "primaAsisBa": 222170
+                    }
+                ]
+            },
+            "responseData": {
+                "numSecuPol": 29817626220,
+                "numEndoso": 0,
+                "numCotizacion": 0,
+                "numLiquidacion": 29817626220,
+                "prima": 1964857,
+                "impuestoPrima": 373323,
+                "totalPrima": 2338180,
+                "coberturasCotizacion": [
+                    {
+                        "descripcion": "Valor Prima",
+                        "valorPrima": 1684967
+                    },
+                    {
+                        "descripcion": "Valor Iva Prima",
+                        "valorPrima": 320143.73
+                    },
+                    {
+                        "descripcion": "Valor Asistencia",
+                        "valorPrima": 279890
+                    },
+                    {
+                        "descripcion": "Valor Iva Asistencia",
+                        "valorPrima": 53179.1
+                    },
+                    {
+                        "descripcion": "Valor Pequeños Accesorios",
+                        "valorPrima": 160000
+                    },
+                    {
+                        "descripcion": "Valor Iva Prima PA",
+                        "valorPrima": 30400
+                    },
+                    {
+                        "descripcion": "Valor Riesgos Patrimoniales",
+                        "valorPrima": 4000
+                    }
+                ],
+                "reqInspeccion": "S",
+                "marcaTermOk": false,
+                "mcaProvisorio": true
+            }
+        },
+        {
+            "requestData": {
+                "tomador": {
+                    "tipoDocumento": "CC",
+                    "numeroDocumento": 1107069274
+                },
+                "periodoFacturacion": 12,
+                "claveAsesor": "73999",
+                "autos": [
+                    {
+                        "codRiesgo": 1,
+                        "placa": "FWM874",
+                        "marca": "08801046",
+                        "modelo": 2018,
+                        "asegurado": {
+                            "nombres": "RAFAEL",
+                            "tipoDocumento": "CC",
+                            "telefono": "3300000",
+                            "direccion": "AV DORADO N 68C 61 P 10 TORRE CENTRAL",
+                            "email": "5rafaelgarciaocampo@gmail.com",
+                            "numeroDocumento": 1107069274,
+                            "apellidos": "GARCIA",
+                            "celular": "3108987234",
+                            "ciudad": "14000"
+                        },
+                        "conductor": {
+                            "nombres": "Rafael Eduardo ",
+                            "sexo": "M",
+                            "fechaNacimiento": "26121991",
+                            "ocupacion": 1,
+                            "menor25": true,
+                            "estadoCivil": "C"
+                        },
+                        "sumaAsegurada": 29100000,
+                        "sumaAccesorios": 0,
+                        "opcionCobertura": 0,
+                        "localidadMovilizacion": "14000",
+                        "responsabilidadCivil": 18,
+                        "deducibleCobertura": 0,
+                        "vehiculoRemplazo": true,
+                        "deducibleParcial": 140,
+                        "deducibleTotal": 3,
+                        "deducibleHurto": 3,
+                        "uso": "31",
+                        "bonusOMalus": "-59",
+                        "vinculacionGrupo": true,
+                        "beneficiario": {
+                            "tipoDocumento": "CC",
+                            "numeroDocumento": "1107069274",
+                            "oneroso": false,
+                            "razonSocial": "RAFAEL EDUARDO GARCIA OCAMPO"
+                        },
+                        "color": "240",
+                        "motor": "F8DN5859868",
+                        "chasis": "MA3FB32S8J0B02944",
+                        "ceroKm": "N",
+                        "blindado": false,
+                        "fechaCexper": "2023-04-30T00:00:00",
+                        "descuentoTecnico": -59,
+                        "descuentoComercial": 0,
+                        "reqInspeccion": "S",
+                        "emailEnvio": "tecnologia@grupoasistencia.com",
+                        "contiCambioCompania": false,
+                        "contiCambioAsegurado": false,
+                        "accesorios": [],
+                        "tipoServicioRunt": 1,
+                        "fechaFinVigFasecolda": "2023-11-21T00:00:00",
+                        "calculaBonifiReprLegal": false,
+                        "tipoVehiculo": "1",
+                        "opcionAutos": 2,
+                        "opcionPa": "S",
+                        "opcionAsis": 1,
+                        "primaAsisBa": 222170
+                    }
+                ]
+            },
+            "responseData": {
+                "numSecuPol": 29817626241,
+                "numEndoso": 0,
+                "numCotizacion": 0,
+                "numLiquidacion": 29817626241,
+                "prima": 1831380,
+                "impuestoPrima": 347962,
+                "totalPrima": 2179342,
+                "coberturasCotizacion": [
+                    {
+                        "descripcion": "Valor Prima",
+                        "valorPrima": 1551490
+                    },
+                    {
+                        "descripcion": "Valor Iva Prima",
+                        "valorPrima": 294783.1
+                    },
+                    {
+                        "descripcion": "Valor Asistencia",
+                        "valorPrima": 279890
+                    },
+                    {
+                        "descripcion": "Valor Iva Asistencia",
+                        "valorPrima": 53179.1
+                    },
+                    {
+                        "descripcion": "Valor Pequeños Accesorios",
+                        "valorPrima": 138000
+                    },
+                    {
+                        "descripcion": "Valor Iva Prima PA",
+                        "valorPrima": 26220
+                    },
+                    {
+                        "descripcion": "Valor Riesgos Patrimoniales",
+                        "valorPrima": 2200
+                    }
+                ],
+                "reqInspeccion": "S",
+                "marcaTermOk": false,
+                "mcaProvisorio": true
+            }
+        },
+        {
+            "requestData": {
+                "tomador": {
+                    "tipoDocumento": "CC",
+                    "numeroDocumento": 1107069274
+                },
+                "periodoFacturacion": 12,
+                "claveAsesor": "73999",
+                "autos": [
+                    {
+                        "codRiesgo": 1,
+                        "placa": "FWM874",
+                        "marca": "08801046",
+                        "modelo": 2018,
+                        "asegurado": {
+                            "nombres": "RAFAEL",
+                            "tipoDocumento": "CC",
+                            "telefono": "3300000",
+                            "direccion": "AV DORADO N 68C 61 P 10 TORRE CENTRAL",
+                            "email": "5rafaelgarciaocampo@gmail.com",
+                            "numeroDocumento": 1107069274,
+                            "apellidos": "GARCIA",
+                            "celular": "3108987234",
+                            "ciudad": "14000"
+                        },
+                        "conductor": {
+                            "nombres": "Rafael Eduardo ",
+                            "sexo": "M",
+                            "fechaNacimiento": "26121991",
+                            "ocupacion": 1,
+                            "menor25": true,
+                            "estadoCivil": "C"
+                        },
+                        "sumaAsegurada": 29100000,
+                        "sumaAccesorios": 0,
+                        "opcionCobertura": 0,
+                        "localidadMovilizacion": "14000",
+                        "responsabilidadCivil": 21,
+                        "deducibleCobertura": 0,
+                        "vehiculoRemplazo": false,
+                        "deducibleParcial": 141,
+                        "deducibleTotal": 3,
+                        "deducibleHurto": 3,
+                        "uso": "31",
+                        "bonusOMalus": "-59",
+                        "vinculacionGrupo": true,
+                        "beneficiario": {
+                            "tipoDocumento": "CC",
+                            "numeroDocumento": "1107069274",
+                            "oneroso": false,
+                            "razonSocial": "RAFAEL EDUARDO GARCIA OCAMPO"
+                        },
+                        "color": "240",
+                        "motor": "F8DN5859868",
+                        "chasis": "MA3FB32S8J0B02944",
+                        "ceroKm": "N",
+                        "blindado": false,
+                        "fechaCexper": "2023-04-30T00:00:00",
+                        "descuentoTecnico": -59,
+                        "descuentoComercial": 0,
+                        "reqInspeccion": "S",
+                        "emailEnvio": "tecnologia@grupoasistencia.com",
+                        "contiCambioCompania": false,
+                        "contiCambioAsegurado": false,
+                        "accesorios": [],
+                        "tipoServicioRunt": 1,
+                        "fechaFinVigFasecolda": "2023-11-21T00:00:00",
+                        "calculaBonifiReprLegal": false,
+                        "tipoVehiculo": "1",
+                        "opcionAutos": 4,
+                        "opcionPa": "N",
+                        "opcionAsis": 1,
+                        "primaAsisBa": 222170
+                    }
+                ]
+            },
+            "responseData": {
+                "numSecuPol": 29817626221,
+                "numEndoso": 0,
+                "numCotizacion": 0,
+                "numLiquidacion": 29817626221,
+                "prima": 1524694,
+                "impuestoPrima": 289692,
+                "totalPrima": 1814386,
+                "coberturasCotizacion": [
+                    {
+                        "descripcion": "Valor Prima",
+                        "valorPrima": 1244804
+                    },
+                    {
+                        "descripcion": "Valor Iva Prima",
+                        "valorPrima": 236512.76
+                    },
+                    {
+                        "descripcion": "Valor Asistencia",
+                        "valorPrima": 279890
+                    },
+                    {
+                        "descripcion": "Valor Iva Asistencia",
+                        "valorPrima": 53179.1
+                    },
+                    {
+                        "descripcion": "Valor Riesgos Patrimoniales",
+                        "valorPrima": 1500
+                    }
+                ],
+                "reqInspeccion": "S",
+                "marcaTermOk": false,
+                "mcaProvisorio": true
+            }
+        },
+        {
+            "requestData": {
+                "tomador": {
+                    "tipoDocumento": "CC",
+                    "numeroDocumento": 1107069274
+                },
+                "periodoFacturacion": 12,
+                "claveAsesor": "73999",
+                "autos": [
+                    {
+                        "codRiesgo": 1,
+                        "placa": "FWM874",
+                        "marca": "08801046",
+                        "modelo": 2018,
+                        "asegurado": {
+                            "nombres": "RAFAEL",
+                            "tipoDocumento": "CC",
+                            "telefono": "3300000",
+                            "direccion": "AV DORADO N 68C 61 P 10 TORRE CENTRAL",
+                            "email": "5rafaelgarciaocampo@gmail.com",
+                            "numeroDocumento": 1107069274,
+                            "apellidos": "GARCIA",
+                            "celular": "3108987234",
+                            "ciudad": "14000"
+                        },
+                        "conductor": {
+                            "nombres": "Rafael Eduardo ",
+                            "sexo": "M",
+                            "fechaNacimiento": "26121991",
+                            "ocupacion": 1,
+                            "menor25": true,
+                            "estadoCivil": "C"
+                        },
+                        "sumaAsegurada": 29100000,
+                        "sumaAccesorios": 0,
+                        "opcionCobertura": 0,
+                        "localidadMovilizacion": "14000",
+                        "responsabilidadCivil": 23,
+                        "deducibleCobertura": 0,
+                        "vehiculoRemplazo": false,
+                        "deducibleParcial": 145,
+                        "deducibleTotal": 118,
+                        "deducibleHurto": 118,
+                        "uso": "31",
+                        "bonusOMalus": "-59",
+                        "vinculacionGrupo": true,
+                        "beneficiario": {
+                            "tipoDocumento": "CC",
+                            "numeroDocumento": "1107069274",
+                            "oneroso": false,
+                            "razonSocial": "RAFAEL EDUARDO GARCIA OCAMPO"
+                        },
+                        "color": "240",
+                        "motor": "F8DN5859868",
+                        "chasis": "MA3FB32S8J0B02944",
+                        "ceroKm": "N",
+                        "blindado": false,
+                        "fechaCexper": "2023-04-30T00:00:00",
+                        "descuentoTecnico": -59,
+                        "descuentoComercial": 0,
+                        "reqInspeccion": "S",
+                        "emailEnvio": "tecnologia@grupoasistencia.com",
+                        "contiCambioCompania": false,
+                        "contiCambioAsegurado": false,
+                        "accesorios": [],
+                        "tipoServicioRunt": 1,
+                        "fechaFinVigFasecolda": "2023-11-21T00:00:00",
+                        "calculaBonifiReprLegal": false,
+                        "tipoVehiculo": "1",
+                        "opcionAutos": 5,
+                        "opcionPa": "N",
+                        "opcionAsis": 8,
+                        "primaAsisBa": 222170
+                    }
+                ]
+            },
+            "responseData": {
+                "numSecuPol": 29817626242,
+                "numEndoso": 0,
+                "numCotizacion": 0,
+                "numLiquidacion": 29817626242,
+                "prima": 880806,
+                "impuestoPrima": 164903,
+                "totalPrima": 1045709,
+                "coberturasCotizacion": [
+                    {
+                        "descripcion": "Valor Prima",
+                        "valorPrima": 801103
+                    },
+                    {
+                        "descripcion": "Valor Iva Prima",
+                        "valorPrima": 154659.81
+                    },
+                    {
+                        "descripcion": "Valor Asistencia",
+                        "valorPrima": 66807
+                    },
+                    {
+                        "descripcion": "Valor Iva Asistencia",
+                        "valorPrima": 12693.33
+                    },
+                    {
+                        "descripcion": "Valor Riesgos Patrimoniales",
+                        "valorPrima": 600
+                    },
+                    {
+                        "descripcion": "Accidentes Personales",
+                        "valorPrima": 12896
+                    }
+                ],
+                "reqInspeccion": "S",
+                "marcaTermOk": false,
+                "mcaProvisorio": true
+            }
+        }
+    ]
+}
