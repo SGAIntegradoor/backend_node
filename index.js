@@ -23,12 +23,11 @@ server.use((req, res, next) => {
 	next();
 });
 
-
 server.use("/WSBolivar", bolivarRoutes)
 
-// server.get('/backend_node/', (req, res) => {
-//     res.send('Hello Jenn');
-// })
+server.get('/', (req, res) => {
+    res.send('Hello Daniel');
+})
 
 server.use((err, req, res, next) => {
 	const status = err.status || 500;
