@@ -2,10 +2,11 @@ const getTokenBolivar = require("./tokenBolivar");
 const preSettleBolivar = require("./preSettleBolivar");
 const recoverySettle = require("./recoverySettle");
 const settleBolivar = require("./settleBolivar");
+const quotationBolivar = require("./quotationBolivar");
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); // Función de espera
 
-const processQuotationBolivar = async (info) => {
+const processQuotationBolivar = async (info, opcionAuto) => {
   const uso = 31;
   const codigoSubProd = 251;
   const codUrs = 900600470;
@@ -115,45 +116,36 @@ const processQuotationBolivar = async (info) => {
     numeroTelefono: numeroTelefono,
   };
   // Variable que almacena las liquidaciones
-  let liquidaciones = [];
+  // let liquidacion = 0;
 
   // Respuesta de la solicitud de recuperacion de preliquidacion donde solo se toma el CUT
   const preSettleResponse = await preSettleBolivar(data, access_token);
 
   // Esperar 25 segundos
-  await delay(25000);
+  await delay(20000);
   const CUT = preSettleResponse?.data?.CUT;
 
   // Ejecutar recoverySettle con la respuesta anterior
   const plans = await recoverySettle(access_token, CUT);
 
-  // console.log("Recovery Data Processed: ", recovery);
+  console.log("Recovery Data Processed: ", plans);
 
-  // Variable que almacena la respuesta de la promesa del metodo settleBolivar
+  // Variable que almacena la respuesta de la promesa del metodo settleBolivar 
   const settle = await settleBolivar(CUT, access_token);
-
-  let errores;
-  try {
-    errores = JSON.parse(settle?.dataHeader?.errores || "{}");
-  } catch (error) {
-    console.error("Error al parsear errores: ", error.message);
-    errores = {}; // Valor por defecto
-  }
-
-  console.log(
-    "Settle Data Processed: ",
-    settle.data,
-    errores
-  );
-  // Recorrer la respuesta de la promesa del metodo settleBolivar y la almacena los numeros de liquidaciones en la variable liquidaciones
-  settle?.data?.map((element) => {
-    liquidaciones.push(element.responseData.numLiquidacion);
+  const liquidacion = settle?.data.find((liqu) => {
+    return liqu.requestData.autos[0].opcionAutos === opcionAuto;
   });
+  
+  let numLiqCot = liquidacion.responseData.numLiquidacion ?? 0;
 
-  console.log(liquidaciones);
-  // return liquidaciones;
+  // console.log("Resultado de find:", );
+  
+  const quotation = await quotationBolivar(CUT, numLiqCot, access_token);
+  
+  return quotation;
 
-  return { CUT, liquidaciones, plans, settle, access_token };
+
+  // return { CUT, liquidaciones, plans, settle, access_token };
 };
 
 module.exports = processQuotationBolivar;

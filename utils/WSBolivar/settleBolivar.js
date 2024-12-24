@@ -1,26 +1,26 @@
 const { default: axios } = require("axios");
 const { default: axiosRetry } = require("axios-retry");
 
-// axiosRetry(axios, {
-//     retries: 3,
-//     retryDelay: (retryCount) => retryCount * 2000, // 1 segundo por intento
-//     retryCondition: (error) => {
-//       const isServerError = error.status >= 500;
-//       const hasSpecificCodes = [504, -1].includes(
-//         error?.status ?? error?.response?.data?.responseCode
-//       );
+axiosRetry(axios, {
+    retries: 3,
+    retryDelay: (retryCount) => retryCount * 2000, // 1 segundo por intento
+    retryCondition: (error) => {
+      const isServerError = error.status >= 500;
+      const hasSpecificCodes = [504, -1].includes(
+        error?.status ?? error?.response?.data?.responseCode
+      );
 
-//       if (isServerError) {
-//         console.log("Reintentando debido a un error de servidor.");
-//       } else if (hasSpecificCodes) {
-//         console.log(
-//           `Reintentando debido al código de respuesta ${error.response?.data?.responseCode}.`
-//         );
-//       }
+      if (isServerError) {
+        console.log("Reintentando debido a un error de servidor.");
+      } else if (hasSpecificCodes) {
+        console.log(
+          `Reintentando debido al código de respuesta ${error.response?.data?.responseCode}.`
+        );
+      }
 
-//       return isServerError || hasSpecificCodes;
-//     },
-//   });
+      return isServerError || hasSpecificCodes;
+    },
+  });
 
 const settleBolivar = async (cut, access_token) => {
   const url =
@@ -51,7 +51,7 @@ const settleBolivar = async (cut, access_token) => {
         Authorization: `Bearer ${access_token}`,
         "x-api-key": apiKey,
       },
-      timeout: 40000,
+      timeout: 140000,
     });
 
     codigoRespuesta = response.status;
@@ -60,7 +60,7 @@ const settleBolivar = async (cut, access_token) => {
       response.data.dataHeader.codRespuesta == 0 &&
       response.data.dataHeader.codRespuesta != null
     ) {
-      console.log(response.data);
+    //   console.log(response.data);
       codigoRespuesta = 200;
       cont = 4;
       return response.data;
