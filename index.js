@@ -4,6 +4,13 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const bolivarRoutes = require('./routes/WSBolivarRoutes/wsBolivarRoutes');
+const fs = require('fs');
+const path = require('path');
+
+// Crear un archivo para guardar los logs
+const logStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+
+// Usar morgan para registrar las solicitudes
 
 const server = express();
 // server.use(express.json());
@@ -11,7 +18,8 @@ const server = express();
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
-server.use(morgan("dev"));
+// server.use(morgan("dev"));
+server.use(morgan('combined', { stream: logStream }));
 server.use((req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Credentials", "true");
@@ -25,7 +33,7 @@ server.use((req, res, next) => {
 
 server.use("/WSBolivar", bolivarRoutes)
 
-server.get('motor_backend/', (req, res) => {
+server.get('/motor_backend/', (req, res) => {
     res.send('Hello Daniel');
 })
 
