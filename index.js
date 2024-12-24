@@ -25,7 +25,7 @@ server.use((req, res, next) => {
 
 server.use("/WSBolivar", bolivarRoutes)
 
-server.get('/', (req, res) => {
+server.get('motor_backend/', (req, res) => {
     res.send('Hello Daniel');
 })
 
