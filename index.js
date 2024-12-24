@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const bolivarRoutes = require('./routes/WSBolivarRoutes/wsBolivarRoutes');
 const fs = require('fs');
 const path = require('path');
+const cors = require("cors");
 
 // Crear un archivo para guardar los logs
 const logStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
@@ -13,6 +14,7 @@ const logStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { fla
 // Usar morgan para registrar las solicitudes
 
 const server = express();
+server.use(cors());
 // server.use(express.json());
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
