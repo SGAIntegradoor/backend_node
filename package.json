@@ -1,7 +1,7 @@
 {
-  "name": "backend_node",
+  "name": "motor_backend",
   "version": "1.0.0",
-  "description": "Backend Node",
+  "description": "motor_backend",
   "repository": {},
   "main": "index.js",
   "scripts": {
