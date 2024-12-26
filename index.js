@@ -33,11 +33,10 @@ server.use((req, res, next) => {
 	next();
 });
 
+server.use("/WSBolivar/", bolivarRoutes)
 server.get('/', (req, res) => {
     res.send('Hello Daniel');
 })
-server.use("/WSBolivar", bolivarRoutes)
-
 
 server.use((err, req, res, next) => {
 	const status = err.status || 500;
