@@ -9,6 +9,10 @@ const postWSBolivarQuotationController = async (data) => {
     }
 
     let opcionAutos = [1, 2, 4, 5];
+    let productoActual = "";
+
+    // const result = await processQuotationBolivar(data, 1);
+    // return result;
 
     // Llamada a la función de procesamiento
     let cotizaciones = await Promise.all(
@@ -19,26 +23,98 @@ const postWSBolivarQuotationController = async (data) => {
           console.log(`Finalizó proceso para opciónAutos: ${element}`);
           switch (element) {
             case 1:
-              result.producto = "Premium";
+              productoActual = "Premium";
               break;
             case 2:
-              result.producto = "Standard";
+              productoActual = "Standard";
               break;
             case 4:
-              result.producto = "Clásica";
+              productoActual = "Clásica";
               break;
             case 5:
-              result.producto = "Autos Ligeros";
+              productoActual = "Autos Ligeros";
               break;
             default:
               break;
           }
 
-          if(result.data.length === 0){
-            throw new Error("No se cotizo ninguna oferta, intente nuevamente.")
+          // Responsabilidad Civil
+
+          let RCE = 0;
+
+          if (element == 1) {
+            RCE = 4000000000;
+          } else if (element == 2) {
+            RCE = 2200000000;
+          } else if (element == 4) {
+            RCE = 1500000000;
+          } else {
+            RCE = 600000000;
           }
 
-          return result;
+          // console.log(result.response.data)
+          // return;
+          // Cubirmiento PTD y PTH
+
+          let perdidaTotalDano = "";
+          let perdidaParcialDano = "";
+          let perdidaTotalesParcialesHurto = "";
+
+          result.plans?.data?.alternativasDeducibles?.map((cobertura) => {
+            if (element == cobertura?.codigoOpcion) {
+              cobertura?.tiposCobertura?.map((tipo) => {
+                if (tipo?.codigoCobertura == 371) {
+                  perdidaTotalDano = tipo?.descripcionDeducible;
+                } else if (tipo?.codigoCobertura == 372) {
+                  perdidaParcialDano = tipo?.descripcionDeducible;
+                } else if (tipo?.codigoCobertura == 374) {
+                  perdidaTotalesParcialesHurto = tipo?.descripcionDeducible;
+                }
+              });
+            } else {
+              return "Codigo de opción no encontrada";
+            }
+          });
+
+          // Conductores Elegidos
+
+          let conductorElegido = "Si ampara";
+
+          // Servicio de Grua
+
+          let servicioGrua = "Si ampara";
+
+          // Formatear la respuesta
+          
+          const prodFormatted = {
+            entidad: "Seguros Bolivar",
+            numero_cotizacion: result?.response.data[0].responseData.numCotizacion,
+            imagen: "bolivar.png",
+            producto: productoActual,
+            precio: result?.response.data[0].responseData.totalPrima.toLocaleString("es-ES"),
+            responsabilidad_civil: RCE.toLocaleString("es-ES"),
+            cubrimiento: `PTD: ${perdidaTotalDano} - PTH: ${perdidaTotalesParcialesHurto}`,
+            deducible: `PPD: ${element !== 5 ? perdidaParcialDano : "No cubre"} - PPH: ${perdidaTotalesParcialesHurto}`,
+            conductores_eledigos: conductorElegido,
+            servicio_grua: servicioGrua,
+          };
+          // 'entidad' => 'Seguros Bolivar',
+          // 'numero_cotizacion' => $Producto->numCotizacion,
+          // 'imagen' => 'bolivar.png',
+          // 'producto' => $nomProduct,
+          // 'precio' => number_format($Producto->totalPrima, 0, ',', '.'),
+          //   'responsabilidad_civil' => $nomProduct == "Verde" ? "4.000.000.000" : number_format($RCE, 0, ',', '.'),
+          //   'cubrimiento' => $datoPTD != $datoPTH ? 'Cubrimiento PTD al ' . $datoPTD . ' y Cubrimiento PTH al ' . $datoPTH :  $datoPTD,
+          //   'deducible' => $deducible,
+          //   'conductores_elegidos' => $conductorElegido,
+          //   'servicio_grua' => 'Si ampara'
+          // );
+
+          // if (result.response.data.length === 0) {
+          //   throw new Error("No se cotizo ninguna oferta, intente nuevamente.");
+          // }
+
+          return prodFormatted;
         } catch (error) {
           console.error(
             `Error en el proceso de opciónAutos ${element}:`,

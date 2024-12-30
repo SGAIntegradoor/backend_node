@@ -21,7 +21,6 @@ const getTokenBolivarHandler = async (req, res) => {
   }
 };
 
-
 const postQuotationBolivarHandler = async (req, res) => {
   try {
     // Validación básica de entradas
@@ -36,13 +35,25 @@ const postQuotationBolivarHandler = async (req, res) => {
     const data = await postWSBolivarQuotationController(req.body);
 
     // Enviar respuesta exitosa
-    return res.status(200).json({
-      success: true,
-      message: "Cotización procesada correctamente.",
-      data: data,
-    });
+
+    // if (data.response.data.length == 0) {
+    //   return res.status(500).json({
+    //     success: false,
+    //     message: "Error procesando la cotización.",
+    //     error: "Error desconocido.",
+    //   });
+    // } else {
+      return res.status(200).json({
+        success: true,
+        message: "Cotización procesada correctamente.",
+        data: data,
+      });
+    // }
   } catch (error) {
-    console.error("Error en postQuotationBolivarHandler:", error.message || error);
+    console.error(
+      "Error en postQuotationBolivarHandler:",
+      error.message || error
+    );
 
     // Enviar respuesta de error
     return res.status(500).json({

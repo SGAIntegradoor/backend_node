@@ -127,23 +127,26 @@ const processQuotationBolivar = async (info, opcionAuto) => {
 
   // Ejecutar recoverySettle con la respuesta anterior
   const plans = await recoverySettle(access_token, CUT);
+  // return plans;
 
-  console.log("Recovery Data Processed: ", plans);
+  // console.log("Recovery Data Processed: ", plans);
 
-  // Variable que almacena la respuesta de la promesa del metodo settleBolivar 
+  // Variable que almacena la respuesta de la promesa del metodo settleBolivar
   const settle = await settleBolivar(CUT, access_token);
+
   const liquidacion = settle?.data.find((liqu) => {
     return liqu.requestData.autos[0].opcionAutos === opcionAuto;
   });
-  
+
+  // console.log(liquidacion)
+
   let numLiqCot = liquidacion.responseData.numLiquidacion ?? 0;
 
   // console.log("Resultado de find:", );
-  
-  const quotation = await quotationBolivar(CUT, numLiqCot, access_token);
-  
-  return quotation;
 
+  const quotation = await quotationBolivar(CUT, numLiqCot, access_token);
+
+  return { response: quotation, plans };
 
   // return { CUT, liquidaciones, plans, settle, access_token };
 };

@@ -21,7 +21,7 @@ axiosRetry(axios, {
     },
   });
 
-const quotationBolivar = async (cut, liquidacion, access_token) => {
+const quotationBolivar = async (cut, liquidacion, access_token, plans) => {
   console.log("CUT, Liquidaciones: ", cut, liquidacion);
 
   // URL PRD
@@ -43,9 +43,9 @@ const quotationBolivar = async (cut, liquidacion, access_token) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${access_token}`,
       },
-      timeout: 60000, // 6 minutos por solicitud
+      timeout: 60000, // 60 segundos por solicitud
     });
-    console.log(response.data.dataHeader.errores);
+    // console.log(response.data.dataHeader.errores);
     if (response.data.dataHeader?.codRespuesta === 0) {
       console.log("Respuesta exitosa para la liquidación:", liquidacion);
       return response.data; // Agregar cotización exitosa

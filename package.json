@@ -5,7 +5,9 @@
   "repository": {},
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "startWatch": "node --watch ./index.js",
+    "dev": "nodemon ./index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +22,9 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.9",
     "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
